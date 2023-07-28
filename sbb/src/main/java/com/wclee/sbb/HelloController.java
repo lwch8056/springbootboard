@@ -9,6 +9,6 @@ public class HelloController {
 	@GetMapping("/")
 	@ResponseBody
 	public String Hello() {
-		return "!!!1111!!"; 
+		return "Wellcom SpringBoot!!"; 
 	}
 }
