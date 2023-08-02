@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
-	@GetMapping("/")
+	@GetMapping("/test")
 	@ResponseBody
 	public String Hello() {
 		return "Wellcom SpringBoot!!!@@@@@dddsd"; 
