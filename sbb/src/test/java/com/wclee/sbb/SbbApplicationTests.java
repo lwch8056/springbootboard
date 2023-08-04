@@ -16,6 +16,7 @@ import com.wclee.sbb.answer.Answer;
 import com.wclee.sbb.answer.AnswerRepository;
 import com.wclee.sbb.question.Question;
 import com.wclee.sbb.question.QuestionRepository;
+import com.wclee.sbb.question.QuestionService;
 
 import jakarta.transaction.Transactional;
 
@@ -27,6 +28,9 @@ class SbbApplicationTests {
 	
 	@Autowired
 	private AnswerRepository answerRepository; 
+	
+	@Autowired
+	private QuestionService questionService; 
 
 	@Test
 	void contextLoads() {
@@ -116,6 +120,15 @@ class SbbApplicationTests {
 		
 		assertThat(answerList.size()).isEqualTo(3); 
 		assertEquals("네 자동으로 생성됩니다.", answerList.get(0).getContent());
+	}
+	
+	@Test 
+	void testDataSave() {
+		 for (int i = 1; i < 300; i++) {
+			 String subj = String.format("게시판 테스트 데이터 입니다.:[%03d]", i);
+			 String content = "테스트 게시물 입니다."; 
+			 this.questionService.create(subj, content);
+		 }
 	}
 	
 	
