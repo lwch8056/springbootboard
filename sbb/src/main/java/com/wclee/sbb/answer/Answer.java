@@ -3,6 +3,7 @@ package com.wclee.sbb.answer;
 import java.time.LocalDateTime;
 
 import com.wclee.sbb.question.Question;
+import com.wclee.sbb.user.SiteUser;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,8 +28,13 @@ public class Answer {
 	
 	private LocalDateTime createDate; 
 	
+	private LocalDateTime modifyDate; 	
+	
 	@ManyToOne
 	private Question question; 
+	
+	@ManyToOne
+	private SiteUser author; 
 	
 	@Override
 	public String toString() {

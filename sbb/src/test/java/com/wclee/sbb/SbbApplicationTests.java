@@ -127,7 +127,7 @@ class SbbApplicationTests {
 		 for (int i = 1; i < 300; i++) {
 			 String subj = String.format("게시판 테스트 데이터 입니다.:[%03d]", i);
 			 String content = "테스트 게시물 입니다."; 
-			 this.questionService.create(subj, content);
+			 this.questionService.create(subj, content, null);
 		 }
 	}
 	
